@@ -22,7 +22,7 @@ public class AppInitializer implements WebApplicationInitializer {
 
     private AnnotationConfigWebApplicationContext getContext() {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        context.setConfigLocation("com.feedhenry.web.config");
+        context.setConfigLocation("me.photomap.web.config");
         return context;
     }
 

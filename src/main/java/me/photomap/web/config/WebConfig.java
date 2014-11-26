@@ -1,6 +1,6 @@
 
 
-package com.feedhenry.web.config;
+package me.photomap.web.config;
 
 
 import org.springframework.context.annotation.Configuration;
