@@ -6,6 +6,7 @@ package me.photomap.web.config;
 import me.photomap.web.http.interceptors.AccessInterceptor;
 import me.photomap.web.http.interceptors.UserResolver;
 import org.apache.commons.codec.Charsets;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.ByteArrayHttpMessageConverter;
@@ -27,7 +28,7 @@ class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public CommonsMultipartResolver multipartResolver(){
         CommonsMultipartResolver res = new CommonsMultipartResolver();
-        res.setMaxUploadSize(700000);
+        res.setMaxUploadSize(5000000);
         return res;
     }
 

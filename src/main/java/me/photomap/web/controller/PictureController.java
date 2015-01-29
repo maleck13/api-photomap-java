@@ -68,9 +68,9 @@ public class PictureController {
 
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping("pictures/upload")
-    @ResponseBody public void upload(MultipartFile file, UserAwareHttpRequest req)throws FileException{
+    @ResponseBody public void upload(MultipartFile file, MultipartHttpServletRequest req)throws FileException{
 
-        User u = req.getUser();
+        User u = (User) req.getAttribute(UserAwareHttpRequest.USER_ATTRIBUTE);
 
         fileService.saveMultipartFileToDisk(file,u.getUserName());
 

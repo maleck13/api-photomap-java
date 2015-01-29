@@ -2,30 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a5582a0-6ce6-433d-b986-900ec1bfb3dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/service/exceptions/AmqpMessagingException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/service/AmqpService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/ControllerExceptionHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/service/exceptions/FileException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/service/FileService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/config/RabbitmqConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/data/repo/model/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/http/filters/UserAwareHttpRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/UserController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/data/repo/UserRepo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/service/UserService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/photomap/me/config/common.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/log4j.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reload.sh" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/create_tomcat_admin_user.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/embeded/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/launch/Main.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/photomap/web/http/interceptors/AccessInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/http/interceptors/AccessInterceptor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/photomap/web/config/AppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/config/AppConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/launch/AppInitializer.java" afterPath="$PROJECT_DIR$/src/main/java/launch/AppInitializer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dockerfile" afterPath="$PROJECT_DIR$/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/IndexController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/photomap/web/service/FileService.java" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/service/FileService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/photomap/web/config/MongoConfig.java" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/config/MongoConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/PictureController.java" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/PictureController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/UserController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/photomap/web/config/WebConfig.java" afterPath="$PROJECT_DIR$/src/main/java/me/photomap/web/config/WebConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api-photomap.iml" afterPath="$PROJECT_DIR$/api-photomap.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/photomap/me/config/services.dev.properties" afterPath="$PROJECT_DIR$/src/main/resources/photomap/me/config/services.dev.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/photomap/me/config/services.live.properties" afterPath="$PROJECT_DIR$/src/main/resources/photomap/me/config/services.live.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="api-photomap.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,111 +43,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/config/WebConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="540">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MongoConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/config/MongoConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
+              <caret line="79" column="34" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/config/AppConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="23" column="95" selection-start-line="23" selection-start-column="95" selection-end-line="23" selection-end-column="95" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0740743" vertical-offset="1033" max-vertical-offset="1425">
-              <caret line="94" column="71" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="71" />
-              <folding>
-                <element signature="e#2680#2681#0" expanded="true" />
-                <element signature="e#2730#2731#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Session.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/data/repo/model/Session.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="570">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="919" max-vertical-offset="1395">
+              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="common.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/photomap/me/config/common.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.518518" vertical-offset="1507" max-vertical-offset="4365">
-              <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/data/repo/model/User.java">
+      <file leaf-file-name="services.dev.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/photomap/me/config/services.dev.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="900">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding>
-                <element signature="e#901#902#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Picture.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/data/repo/model/Picture.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1185">
-              <caret line="21" column="24" selection-start-line="20" selection-start-column="3" selection-end-line="21" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PicturesRepo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/data/repo/PicturesRepo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="555">
-              <caret line="41" column="115" selection-start-line="41" selection-start-column="115" selection-end-line="41" selection-end-column="115" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServiceTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/me/photomap/web/service/UserServiceTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1695">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserResolver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/http/interceptors/UserResolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="780">
-              <caret line="33" column="93" selection-start-line="33" selection-start-column="93" selection-end-line="33" selection-end-column="93" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PictureController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PictureController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/controller/PictureController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18987341" vertical-offset="255" max-vertical-offset="870">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="870">
+              <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RedisConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/config/RedisConfig.java">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="885">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.live.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/photomap/me/config/services.live.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/service/FileService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33164558" vertical-offset="619" max-vertical-offset="1275">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -186,35 +164,26 @@
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/service/exceptions/AuthenticationFailure.java" />
         <option value="$PROJECT_DIR$/src/main/resources/photomap/me/config/persistence.dev.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/photomap/me/config/persistence.live.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/photomap/me/config/services.dev.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/photomap/me/config/services.live.properties" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/config/RabbitmqConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/config/MongoConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/annotations/OpenAccess.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/service/exceptions/NoAccessException.java" />
         <option value="$PROJECT_DIR$/src/test/java/me/photomap/web/service/IntegrateBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/service/FileService.java" />
         <option value="$PROJECT_DIR$/src/test/java/me/photomap/web/service/FileServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/config/AppConfig.java" />
         <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/src/main/resources/photomap/me/config/common.properties" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/data/repo/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/ControllerExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/InfoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/PictureController.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/data/repo/model/LoginDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/http/filters/UserFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/launch/AppInitializer.java" />
         <option value="$PROJECT_DIR$/reload.sh" />
         <option value="$PROJECT_DIR$/standalone.conf" />
-        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/config/WebConfig.java" />
         <option value="$PROJECT_DIR$/setenv.sh" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/http/filters/CORSFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/http/interceptors/AccessInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/data/repo/model/Session.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/config/RedisConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/service/UserService.java" />
@@ -222,6 +191,15 @@
         <option value="$PROJECT_DIR$/src/test/java/me/photomap/web/service/UserServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/data/repo/PicturesRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/http/interceptors/UserResolver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/PictureController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/http/interceptors/AccessInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/photomap/me/config/services.dev.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/photomap/me/config/services.live.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/service/FileService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/config/MongoConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/config/WebConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/photomap/web/config/AppConfig.java" />
       </list>
     </option>
   </component>
@@ -309,36 +287,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-photomap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-photomap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -531,44 +479,6 @@
               <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-photomap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-photomap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -649,36 +559,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-photomap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-photomap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="launch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -904,19 +784,6 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -943,6 +810,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1120,7 +1000,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1129,7 +1009,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39914772" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39914772" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1158,12 +1038,12 @@
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1183,8 +1063,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1209,7 +1089,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/me/photomap/web/controller/UserController.java</url>
-          <line>39</line>
+          <line>45</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -1238,16 +1118,28 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/me/photomap/web/http/interceptors/AccessInterceptor.java</url>
-          <line>24</line>
+          <url>file://$PROJECT_DIR$/src/main/java/me/photomap/web/service/FileService.java</url>
+          <line>74</line>
           <properties />
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/me/photomap/web/controller/UserController.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/me/photomap/web/service/FileService.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="10" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1256,6 +1148,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/controller/PictureController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="870">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/service/exceptions/FileException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
@@ -1309,13 +1209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/photomap/me/config/services.live.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/annotations/OpenAccess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
@@ -1351,20 +1244,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="19140" max-vertical-offset="32850">
-          <caret line="1338" column="19" selection-start-line="1338" selection-start-column="19" selection-end-line="1338" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/service/FileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="29" max-vertical-offset="705">
-          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.1.2.RELEASE/spring-test-4.1.2.RELEASE.jar!/org/springframework/mock/web/MockMultipartFile.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2626728" vertical-offset="219" max-vertical-offset="870">
@@ -1394,13 +1273,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/config/MongoConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
-          <caret line="32" column="70" selection-start-line="32" selection-start-column="70" selection-end-line="32" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/data/repo/model/LoginDetails.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
@@ -1425,29 +1297,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/config/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-          <caret line="17" column="75" selection-start-line="17" selection-start-column="75" selection-end-line="17" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.2.RELEASE/spring-web-4.1.2.RELEASE-sources.jar!/org/springframework/web/filter/DelegatingFilterProxy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="4950">
           <caret line="100" column="11" selection-start-line="100" selection-start-column="11" selection-end-line="100" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/http/filters/UserAwareHttpRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24408284" vertical-offset="0" max-vertical-offset="676">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding>
-            <element signature="e#421#422#0" expanded="false" />
-            <element signature="e#451#452#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1459,27 +1312,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/controller/ControllerExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="464" max-vertical-offset="1140">
-          <caret line="74" column="53" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/config/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setenv.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="135">
           <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1487,15 +1323,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
           <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="199" max-vertical-offset="810">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1519,9 +1346,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
           <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1532,32 +1356,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/http/interceptors/AccessInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="570">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/photomap/me/config/common.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/photomap/me/config/services.dev.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1573,18 +1371,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24324325" vertical-offset="0" max-vertical-offset="645">
           <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0740743" vertical-offset="1033" max-vertical-offset="1425">
-          <caret line="94" column="71" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="71" />
-          <folding>
-            <element signature="e#2680#2681#0" expanded="true" />
-            <element signature="e#2730#2731#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1593,7 +1379,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
           <caret line="20" column="33" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1619,7 +1405,25 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="900">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
-            <element signature="e#901#902#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#735#736#0" expanded="false" />
+            <element signature="e#764#765#0" expanded="false" />
+            <element signature="e#809#810#0" expanded="false" />
+            <element signature="e#845#846#0" expanded="false" />
+            <element signature="e#939#940#0" expanded="false" />
+            <element signature="e#967#968#0" expanded="false" />
+            <element signature="e#1002#1003#0" expanded="false" />
+            <element signature="e#1033#1034#0" expanded="false" />
+            <element signature="e#1081#1082#0" expanded="false" />
+            <element signature="e#1121#1122#0" expanded="false" />
+            <element signature="e#1156#1157#0" expanded="false" />
+            <element signature="e#1187#1188#0" expanded="false" />
+            <element signature="e#1235#1236#0" expanded="false" />
+            <element signature="e#1275#1276#0" expanded="false" />
+            <element signature="e#1307#1308#0" expanded="false" />
+            <element signature="e#1335#1336#0" expanded="false" />
+            <element signature="e#1377#1378#0" expanded="false" />
+            <element signature="e#1411#1412#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1628,7 +1432,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1185">
           <caret line="21" column="24" selection-start-line="20" selection-start-column="3" selection-end-line="21" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#0#2068#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#864#865#0" expanded="false" />
+            <element signature="e#889#890#0" expanded="false" />
+            <element signature="e#927#928#0" expanded="false" />
+            <element signature="e#955#956#0" expanded="false" />
+            <element signature="e#990#991#0" expanded="false" />
+            <element signature="e#1019#1020#0" expanded="false" />
+            <element signature="e#1065#1066#0" expanded="false" />
+            <element signature="e#1101#1102#0" expanded="false" />
+            <element signature="e#1132#1133#0" expanded="false" />
+            <element signature="e#1159#1160#0" expanded="false" />
+            <element signature="e#1199#1200#0" expanded="false" />
+            <element signature="e#1231#1232#0" expanded="false" />
+            <element signature="e#1262#1263#0" expanded="false" />
+            <element signature="e#1289#1290#0" expanded="false" />
+            <element signature="e#1329#1330#0" expanded="false" />
+            <element signature="e#1361#1362#0" expanded="false" />
+            <element signature="e#1393#1394#0" expanded="false" />
+            <element signature="e#1421#1422#0" expanded="false" />
+            <element signature="e#1463#1464#0" expanded="false" />
+            <element signature="e#1497#1498#0" expanded="false" />
+            <element signature="e#1526#1527#0" expanded="false" />
+            <element signature="e#1553#1554#0" expanded="false" />
+            <element signature="e#1591#1592#0" expanded="false" />
+            <element signature="e#1623#1624#0" expanded="false" />
+            <element signature="e#1657#1658#0" expanded="false" />
+            <element signature="e#1689#1690#0" expanded="false" />
+            <element signature="e#1737#1738#0" expanded="false" />
+            <element signature="e#1779#1780#0" expanded="false" />
+            <element signature="e#1810#1811#0" expanded="false" />
+            <element signature="e#1837#1838#0" expanded="false" />
+            <element signature="e#1877#1878#0" expanded="false" />
+            <element signature="e#1909#1910#0" expanded="false" />
+            <element signature="e#1940#1941#0" expanded="false" />
+            <element signature="e#1967#1968#0" expanded="false" />
+            <element signature="e#2007#2008#0" expanded="false" />
+            <element signature="e#2039#2040#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1636,24 +1479,134 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="555">
           <caret line="41" column="115" selection-start-line="41" selection-start-column="115" selection-end-line="41" selection-end-column="115" />
+          <folding>
+            <element signature="e#0#1570#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/controller/ControllerExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="464" max-vertical-offset="1140">
+          <caret line="60" column="55" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/http/filters/UserAwareHttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="53" />
+          <folding>
+            <element signature="e#421#422#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/http/interceptors/AccessInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/http/interceptors/UserResolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="780">
-          <caret line="33" column="93" selection-start-line="33" selection-start-column="93" selection-end-line="33" selection-end-column="93" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="385" max-vertical-offset="780">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/photomap/me/config/common.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19174" max-vertical-offset="32850">
+          <caret line="1338" column="19" selection-start-line="1338" selection-start-column="19" selection-end-line="1338" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/controller/PictureController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18987341" vertical-offset="255" max-vertical-offset="870">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="870">
+          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/config/MongoConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
+          <caret line="79" column="34" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="540">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/photomap/me/config/services.live.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/photomap/me/config/services.dev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/config/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="23" column="95" selection-start-line="23" selection-start-column="95" selection-end-line="23" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="919" max-vertical-offset="1395">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="885">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/photomap/web/service/FileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33164558" vertical-offset="619" max-vertical-offset="1275">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
         </state>
       </provider>

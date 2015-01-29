@@ -7,6 +7,7 @@ import me.photomap.web.data.repo.model.LoginDetails;
 import me.photomap.web.data.repo.model.Session;
 import me.photomap.web.data.repo.model.User;
 import me.photomap.web.http.filters.UserAwareHttpRequest;
+import me.photomap.web.service.FileService;
 import me.photomap.web.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
@@ -24,14 +25,19 @@ import java.util.Map;
 public class UserController {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
     @Autowired
-    UserRepo userRepo;
+    private UserRepo userRepo;
+    @Autowired private FileService fileService;
+
 
     @RequestMapping(value = "/user/register",method = RequestMethod.POST, produces = AppConfig.JSON, consumes = AppConfig.JSON)
     @OpenAccess
     @ResponseBody public User register(@RequestBody @Valid User user) throws Exception{
-        return userService.registerUser(user);
+        User newUser = userService.registerUser(user);
+        fileService.setUpUserDirs(newUser);
+        return newUser;
+
     }
 
     @RequestMapping(value = "/user/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)

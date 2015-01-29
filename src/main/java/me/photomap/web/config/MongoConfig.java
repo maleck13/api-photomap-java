@@ -70,8 +70,16 @@ public class MongoConfig extends AbstractMongoConfiguration{
     @Bean
     @Override
     public MongoTemplate mongoTemplate() throws Exception{
-        
-    MongoTemplate m = new MongoTemplate(mongo(), getDatabaseName(),getUserCredentials());
+    Boolean authRequired = env.getProperty("mongodb.requireauth",Boolean.class);
+
+    MongoTemplate m;
+    if(authRequired) {
+        log.info("setting up remote db connection");
+        m =  new MongoTemplate(mongo(), getDatabaseName(), getUserCredentials());
+    }else{
+        log.info("setting up local db connection");
+        m = new MongoTemplate(mongo(),getDatabaseName());
+    }
     return m;
     
 }

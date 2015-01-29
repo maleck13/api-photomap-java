@@ -7,6 +7,7 @@ import me.photomap.web.service.exceptions.NoAccessException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.method.HandlerMethod;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,8 +22,8 @@ public class AccessInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        UserAwareHttpRequest req = (UserAwareHttpRequest) request;
-        User u = req.getUser();
+        User u = (User) request.getAttribute(UserAwareHttpRequest.USER_ATTRIBUTE);
+
 
         if (handler instanceof HandlerMethod) {
             log.debug("checking access on handler " + ((HandlerMethod) handler).getBean() + " " + ((HandlerMethod) handler).getMethod());
