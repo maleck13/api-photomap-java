@@ -1,8 +1,6 @@
 package me.photomap.web.controller;
 
-import me.photomap.web.service.exceptions.AmqpMessagingException;
-import me.photomap.web.service.exceptions.FileException;
-import me.photomap.web.service.exceptions.LoginFailedException;
+import me.photomap.web.service.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -13,6 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,6 +36,15 @@ public class ControllerExceptionHandler {
 
     @ExceptionHandler
     @ResponseBody
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    Map handleException(FileNotFoundException ex){
+        Map<String,String> message = new HashMap();
+        message.put("error",ex.getMessage());
+        return message;
+    }
+
+    @ExceptionHandler
+    @ResponseBody
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     Map handleException(FileException ex){
         log.warn("error with file operation ",ex);
@@ -47,8 +55,8 @@ public class ControllerExceptionHandler {
 
     @ExceptionHandler
     @ResponseBody
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    Map handleException(LoginFailedException ex){
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    Map handleException(AuthenticationFailure ex){
 
         Map<String,String> message = new HashMap<String, String>();
         message.put("error",ex.getMessage());
@@ -68,6 +76,10 @@ public class ControllerExceptionHandler {
         message.put("error",errors);
         return message;
     }
+
+
+
+
 
     @ExceptionHandler
     @ResponseBody

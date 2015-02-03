@@ -23,6 +23,8 @@ public class RabbitmqConfig {
         cf.setHost(host);
         cf.setUsername(user);
         cf.setPassword(pass);
+        cf.setAutomaticRecoveryEnabled(true);
+        cf.setNetworkRecoveryInterval(2000);
         return cf;
     }
 

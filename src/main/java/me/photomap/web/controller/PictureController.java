@@ -5,6 +5,8 @@
  */
 package me.photomap.web.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -16,19 +18,19 @@ import me.photomap.web.http.filters.UserAwareHttpRequest;
 import me.photomap.web.service.AmqpService;
 import me.photomap.web.service.FileService;
 import me.photomap.web.service.exceptions.FileException;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -68,11 +70,23 @@ public class PictureController {
 
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping("pictures/upload")
-    @ResponseBody public void upload(MultipartFile file, MultipartHttpServletRequest req)throws FileException{
+    @ResponseBody public Map<String,String> upload(MultipartFile file, MultipartHttpServletRequest req)throws FileException{
 
         User u = (User) req.getAttribute(UserAwareHttpRequest.USER_ATTRIBUTE);
 
-        fileService.saveMultipartFileToDisk(file,u.getUserName());
+        String jobKey = fileService.saveMultipartFileToDisk(file,u.getUserName());
+        Map<String,String> res = new HashMap<>();
+        res.put("key",jobKey);
+        return res;
+
+    }
+
+    @RequestMapping(value = "/picture",method = RequestMethod.GET,produces = MediaType.IMAGE_JPEG_VALUE )
+    @ResponseBody public byte[] serveImg(UserAwareHttpRequest request, @RequestParam("file")String file)throws Exception{
+        User u = request.getUser();
+        File f = fileService.loadFile(file,u);
+        FileInputStream in = new FileInputStream(f);
+        return IOUtils.toByteArray(in);
 
     }
     

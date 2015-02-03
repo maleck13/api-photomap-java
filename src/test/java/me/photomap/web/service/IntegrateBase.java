@@ -17,7 +17,9 @@ import org.springframework.test.context.web.WebAppConfiguration;
         @ContextConfiguration(name="dispatcher",  classes = AppConfig.class,loader = AnnotationConfigWebContextLoader.class)
 })
 public abstract class IntegrateBase {
+    public static final String FILE_PATH = "file.disk.location";
     static {
         System.setProperty("environment.name", "dev");
+        System.setProperty(FILE_PATH, "/tmp");
     }
 }

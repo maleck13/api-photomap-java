@@ -11,9 +11,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Created by craigbrookes on 20/01/15.
- */
+
 public class UserResolver extends HandlerInterceptorAdapter {
 
     private @Autowired UserService userService;

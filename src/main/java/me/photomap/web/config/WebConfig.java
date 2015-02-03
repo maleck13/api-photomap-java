@@ -44,4 +44,6 @@ class WebConfig extends WebMvcConfigurerAdapter {
         registry.addInterceptor(userResolver());
         registry.addInterceptor(new AccessInterceptor());
     }
+
+
 }

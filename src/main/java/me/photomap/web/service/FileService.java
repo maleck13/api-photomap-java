@@ -1,8 +1,8 @@
 package me.photomap.web.service;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import me.photomap.web.data.repo.model.User;
 import me.photomap.web.service.exceptions.FileException;
+import me.photomap.web.service.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -22,10 +22,10 @@ public class FileService {
 
     @Autowired private Environment env;
     @Autowired private AmqpService amqpService;
-    @Value("${file.disk.location}") String diskLocation;
+    @Value("${file.disk.location}") String DISK_FILE_LOC;
 
 
-    private static final String FILE_DISK_PATH = "file.disk.location";
+
 
     private static final String PIC_DIR = "pictures";
     private static final String COMPLETED_DIR = "completed";
@@ -33,10 +33,14 @@ public class FileService {
 
     public Map<String,String> getUserDirs(User user){
         Map<String,String> dirMap = new HashMap<>();
-        dirMap.put(PIC_DIR,diskLocation + "/" + user.getUserName() + "/" + PIC_DIR);
-        dirMap.put(COMPLETED_DIR,diskLocation + "/" + user.getUserName() + "/" + COMPLETED_DIR);
-        dirMap.put(THUMBS_DIR,diskLocation + "/" + user.getUserName() + "/" + THUMBS_DIR);
+        dirMap.put(PIC_DIR, DISK_FILE_LOC + "/" + user.getUserName() + "/" + PIC_DIR);
+        dirMap.put(COMPLETED_DIR, DISK_FILE_LOC + "/" + user.getUserName() + "/" + COMPLETED_DIR);
+        dirMap.put(THUMBS_DIR, DISK_FILE_LOC + "/" + user.getUserName() + "/" + THUMBS_DIR);
         return dirMap;
+    }
+
+    public String getUserDir(User user, String dirName){
+        return getUserDirs(user).get(dirName);
     }
 
     public Boolean userDirsExist(User user){
@@ -68,24 +72,34 @@ public class FileService {
             throw new FileException("file is empty no content received");
         }
 
-        String location = env.getProperty(FILE_DISK_PATH);
+
         String fileName = file.getOriginalFilename();
         String shortPath = userName + "/" + fileName;
-        location += "/" + shortPath;
+        String location  = DISK_FILE_LOC + "/" + shortPath;
         File fileDest = new File(location);
+        String key = null;
 
         try {
-            if(! fileDest.getParentFile().exists()){
-                fileDest.getParentFile().mkdirs();
-            }
             file.transferTo(fileDest);
             //send out the message over rabbitmq
-            amqpService.publishPicUploadedMessage(shortPath,fileName);
+            key = amqpService.publishPicUploadedMessage(shortPath,fileName,userName);
         }catch (Exception e){
             //a number of checked exceptions can be thrown so convert to simple file exception
             throw new FileException(e.getMessage(),e);
         }
-        return location;
+        return key;
+    }
+
+    public File loadFile(String file, User user) throws FileNotFoundException{
+
+        String dirLoc = getUserDir(user,THUMBS_DIR);
+        String location = dirLoc + "/" + file;
+        File f = new File(location);
+        if(!f.exists() && f.canRead()){
+            throw new FileNotFoundException(file);
+        }
+        return f;
+
     }
 
 }
