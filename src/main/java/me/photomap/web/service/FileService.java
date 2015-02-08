@@ -1,14 +1,20 @@
 package me.photomap.web.service;
 
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.ListObjectsRequest;
+import com.amazonaws.services.s3.model.ObjectListing;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectSummary;
 import me.photomap.web.data.repo.model.User;
 import me.photomap.web.service.exceptions.FileException;
-import me.photomap.web.service.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.awt.*;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +28,9 @@ public class FileService {
 
     @Autowired private Environment env;
     @Autowired private AmqpService amqpService;
+    @Autowired private AmazonS3Client amazonS3Client;
     @Value("${file.disk.location}") String DISK_FILE_LOC;
+    @Value("${s3.enabled}") Boolean S3_ENABLED;
 
 
 
@@ -90,16 +98,49 @@ public class FileService {
         return key;
     }
 
-    public File loadFile(String file, User user) throws FileNotFoundException{
+    public FileResource loadFile(String file, User user) throws FileNotFoundException{
 
-        String dirLoc = getUserDir(user,THUMBS_DIR);
-        String location = dirLoc + "/" + file;
-        File f = new File(location);
-        if(!f.exists() && f.canRead()){
-            throw new FileNotFoundException(file);
+        if(S3_ENABLED) {
+            String s3Path = user.getUserName() + "/thumbs/" + file;
+            S3Object obj = amazonS3Client.getObject("photo-map", s3Path);
+            FileResource res = new FileResource(obj.getObjectContent(),obj.getObjectMetadata().getContentLength(),obj.getObjectMetadata().getContentType());
+            return res;
+        }else {
+            String dirLoc = getUserDir(user,THUMBS_DIR);
+            String location = dirLoc + "/" + file;
+            File f = new File(location);
+            if(!f.exists() && f.canRead()){
+                throw new FileNotFoundException(file);
+            }
+            FileResource res = new FileResource(new FileInputStream(f),f.length(), MediaType.IMAGE_JPEG_VALUE);
+            return res;
         }
-        return f;
 
+
+    }
+
+    public class FileResource {
+        private  InputStream in;
+        private long contentLengh;
+        private  String contentType;
+
+        public FileResource(InputStream in, long contentLengh, String contentType) {
+            this.in = in;
+            this.contentLengh = contentLengh;
+            this.contentType = contentType;
+        }
+
+        public InputStream getContentStream(){
+            return in;
+        }
+
+        public long getContentLengh() {
+            return contentLengh;
+        }
+
+        public String getContentType() {
+            return contentType;
+        }
     }
 
 }

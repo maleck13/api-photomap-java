@@ -8,9 +8,12 @@ package me.photomap.web.controller;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.amazonaws.services.s3.AmazonS3Client;
 import me.photomap.web.data.repo.PicturesRepo;
 import me.photomap.web.data.repo.model.Picture;
 import me.photomap.web.data.repo.model.User;
@@ -22,6 +25,8 @@ import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -42,6 +47,7 @@ public class PictureController {
     @Autowired PicturesRepo picRepo;
     @Autowired AmqpService amqpService;
     @Autowired private FileService fileService;
+    @Autowired private AmazonS3Client s3Client;
 
 
     Logger log = LoggerFactory.getLogger(PictureController.class);
@@ -81,12 +87,15 @@ public class PictureController {
 
     }
 
-    @RequestMapping(value = "/picture",method = RequestMethod.GET,produces = MediaType.IMAGE_JPEG_VALUE )
-    @ResponseBody public byte[] serveImg(UserAwareHttpRequest request, @RequestParam("file")String file)throws Exception{
+    @RequestMapping(value = "/picture",method = RequestMethod.GET)
+    public ResponseEntity serveImg(UserAwareHttpRequest request, HttpServletResponse res, @RequestParam("file")String file)throws Exception{
         User u = request.getUser();
-        File f = fileService.loadFile(file,u);
-        FileInputStream in = new FileInputStream(f);
-        return IOUtils.toByteArray(in);
+        FileService.FileResource resp = fileService.loadFile(file,u);
+        HttpHeaders headers = new HttpHeaders();
+        InputStreamResource inres = new InputStreamResource(resp.getContentStream());
+        headers.setContentLength(resp.getContentLengh());
+        headers.setContentType(MediaType.IMAGE_JPEG);
+        return new ResponseEntity(inres, headers, HttpStatus.OK);
 
     }
     

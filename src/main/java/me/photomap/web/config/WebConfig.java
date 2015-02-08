@@ -3,32 +3,29 @@
 package me.photomap.web.config;
 
 
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.services.s3.AmazonS3Client;
 import me.photomap.web.http.interceptors.AccessInterceptor;
 import me.photomap.web.http.interceptors.UserResolver;
-import org.apache.commons.codec.Charsets;
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.converter.ByteArrayHttpMessageConverter;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import java.util.List;
-
 @EnableWebMvc
 @Configuration
 class WebConfig extends WebMvcConfigurerAdapter {
+
+    @Value("${s3.enabled}") Boolean S3_ENABLED;
 
 
     @Bean
     public CommonsMultipartResolver multipartResolver(){
         CommonsMultipartResolver res = new CommonsMultipartResolver();
-        res.setMaxUploadSize(5000000);
+        res.setMaxUploadSize(10000000); //10Mb
         return res;
     }
 
@@ -45,5 +42,14 @@ class WebConfig extends WebMvcConfigurerAdapter {
         registry.addInterceptor(new AccessInterceptor());
     }
 
+    @Bean
+    public AmazonS3Client amazonS3Client(){
+
+        AmazonS3Client s3 = null;
+        if(S3_ENABLED) {
+         s3 = new AmazonS3Client(new ProfileCredentialsProvider("/etc/photomap/.aws/credentials", "default"));
+        }
+        return s3;
+    }
 
 }
