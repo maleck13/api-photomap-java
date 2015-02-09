@@ -7,6 +7,7 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.s3.AmazonS3Client;
 import me.photomap.web.http.interceptors.AccessInterceptor;
 import me.photomap.web.http.interceptors.UserResolver;
+import me.photomap.web.me.photomap.web.task.TaskFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -50,6 +51,13 @@ class WebConfig extends WebMvcConfigurerAdapter {
          s3 = new AmazonS3Client(new ProfileCredentialsProvider("/etc/photomap/.aws/credentials", "default"));
         }
         return s3;
+    }
+
+    @Bean
+    public TaskFactory taskFactory(){
+        TaskFactory.registerTask(TaskFactory.QUEUE_CLEANER);
+        TaskFactory t = new TaskFactory();
+        return t;
     }
 
 }

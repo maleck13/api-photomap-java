@@ -1,6 +1,9 @@
 package me.photomap.web.service;
 
 import com.rabbitmq.client.*;
+import me.photomap.web.data.repo.QueueRepo;
+import me.photomap.web.data.repo.model.*;
+import me.photomap.web.data.repo.model.Queue;
 import me.photomap.web.service.exceptions.AmqpMessagingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
@@ -19,6 +22,8 @@ public class AmqpService {
 
     @Autowired
     ConnectionFactory amqpConnectionFactory;
+
+    private @Autowired QueueRepo queueRepo;
 
     Connection amqpConnection;
 
@@ -74,7 +79,12 @@ public class AmqpService {
             ch = amqpConnection.createChannel();
             ch.queueDeclare(PICS_QUE, true, false, false, null);
             ch.queueDeclare(resKey,true,false,false,null);
-
+            me.photomap.web.data.repo.model.Queue logQ = new Queue();
+            logQ.setQueueId(resKey);
+            Calendar c = Calendar.getInstance();
+            c.add(Calendar.DAY_OF_YEAR ,-2);
+            logQ.setCreated(c.getTime());
+            queueRepo.save(logQ);
             ch.basicPublish("", PICS_QUE, MessageProperties.PERSISTENT_TEXT_PLAIN, jsonMessage.getBytes());
         }catch (IOException e){
             log.warn("failed to declare or publish message ",e);

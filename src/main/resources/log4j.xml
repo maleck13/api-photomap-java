@@ -18,10 +18,23 @@
         </layout>
     </appender>
 
+    <appender name="taskLog" class="org.apache.log4j.FileAppender">
+        <param name="file" value="/var/log/photomap-api/task.log"/>
+        <param name="MaxFileSize" value="100KB"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p: %c - %m%n" />
+        </layout>
+    </appender>
+
     <!-- Application Loggers -->
     <logger name="me.photomap.web">
         <level value="info" />
         <appender-ref ref="mainLog" />
+    </logger>
+
+    <logger name="me.photomap.web.task">
+        <level value="info" />
+        <appender-ref ref="taskLog" />
     </logger>
 
     <logger name="org.springframework.web.servlet.mvc"  >
