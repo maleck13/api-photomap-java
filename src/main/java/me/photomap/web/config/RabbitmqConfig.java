@@ -11,21 +11,21 @@ import org.springframework.core.env.Environment;
 @Configuration
 public class RabbitmqConfig {
 
-    @Autowired
-    Environment env;
+  @Autowired
+  Environment env;
 
-    @Bean(name = "rabbitMqConnectionFactory")
-    public ConnectionFactory rabbitMqConnectionFactory(){
-        ConnectionFactory cf = new ConnectionFactory();
-        String host = env.getProperty("rabbitmq.host");
-        String user = env.getProperty("rabbitmq.pics.user");
-        String pass = env.getProperty("rabbitmq.pics.pass");
-        cf.setHost(host);
-        cf.setUsername(user);
-        cf.setPassword(pass);
-        cf.setAutomaticRecoveryEnabled(true);
-        cf.setNetworkRecoveryInterval(2000);
-        return cf;
-    }
+  @Bean(name = "rabbitMqConnectionFactory")
+  public ConnectionFactory rabbitMqConnectionFactory() {
+    ConnectionFactory cf = new ConnectionFactory();
+    String host = env.getProperty("rabbitmq.host");
+    String user = env.getProperty("rabbitmq.pics.user");
+    String pass = env.getProperty("rabbitmq.pics.pass");
+    cf.setHost(host);
+    cf.setUsername(user);
+    cf.setPassword(pass);
+    cf.setAutomaticRecoveryEnabled(true);
+    cf.setNetworkRecoveryInterval(2000);
+    return cf;
+  }
 
 }

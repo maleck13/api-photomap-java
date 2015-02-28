@@ -1,7 +1,7 @@
 package me.photomap.web.controller;
 
 import me.photomap.web.annotations.OpenAccess;
-import me.photomap.web.config.AppConfig;
+import me.photomap.web.config.WebConfig;
 import me.photomap.web.data.repo.UserRepo;
 import me.photomap.web.data.repo.model.LoginDetails;
 import me.photomap.web.data.repo.model.Session;
@@ -24,48 +24,52 @@ import java.util.Map;
 @Controller
 public class UserController {
 
-    @Autowired
-    private UserService userService;
-    @Autowired
-    private UserRepo userRepo;
-    @Autowired private FileService fileService;
+  @Autowired
+  private UserService userService;
+  @Autowired
+  private UserRepo userRepo;
+  @Autowired
+  private FileService fileService;
 
 
-    @RequestMapping(value = "/user/register",method = RequestMethod.POST, produces = AppConfig.JSON, consumes = AppConfig.JSON)
-    @OpenAccess
-    @ResponseBody public User register(@RequestBody @Valid User user) throws Exception{
-        User newUser = userService.registerUser(user);
-        fileService.setUpUserDirs(newUser);
-        return newUser;
+  @RequestMapping(value = "/user/register", method = RequestMethod.POST, produces = WebConfig.JSON, consumes = WebConfig.JSON)
+  @OpenAccess
+  @ResponseBody
+  public User register(@RequestBody @Valid User user) throws Exception {
+    User newUser = userService.registerUser(user);
+    fileService.setUpUserDirs(newUser);
+    return newUser;
 
+  }
+
+  @RequestMapping(value = "/user/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+  @OpenAccess
+  @ResponseBody
+  public Session login(@RequestBody @Valid LoginDetails login) throws Exception {
+    User user = new User();
+    user.setEmail(login.getEmail());
+    user.setPassword(login.getPassword());
+    return userService.loginUser(user);
+  }
+
+  @ResponseStatus(HttpStatus.OK)
+  @RequestMapping(value = "/user/logout", method = RequestMethod.POST)
+  @OpenAccess
+  @ResponseBody
+  public void logOut(UserAwareHttpRequest req) {
+    if (null != req.getUser()) {
+      userService.logoutUser(req.getUser());
     }
-
-    @RequestMapping(value = "/user/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @OpenAccess
-    @ResponseBody public Session login(@RequestBody @Valid LoginDetails login)throws Exception{
-        User user = new User();
-        user.setEmail(login.getEmail());
-        user.setPassword(login.getPassword());
-        return userService.loginUser(user);
-    }
-
-    @ResponseStatus(HttpStatus.OK)
-    @RequestMapping(value = "/user/logout",method = RequestMethod.POST)
-    @OpenAccess
-    @ResponseBody public void logOut(UserAwareHttpRequest req){
-        if(null != req.getUser()){
-            userService.logoutUser(req.getUser());
-        }
-    }
+  }
 
 
-    @ExceptionHandler
-    @ResponseStatus(HttpStatus.CONFLICT)
-    @ResponseBody
-    public Map handleDuplicate(DuplicateKeyException e){
-        Map<String,String> res = new HashMap<String, String>();
-        res.put("error",e.getMessage());
-        return res;
-    }
+  @ExceptionHandler
+  @ResponseStatus(HttpStatus.CONFLICT)
+  @ResponseBody
+  public Map handleDuplicate(DuplicateKeyException e) {
+    Map<String, String> res = new HashMap<String, String>();
+    res.put("error", e.getMessage());
+    return res;
+  }
 
 }

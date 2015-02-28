@@ -10,36 +10,36 @@ import java.util.Date;
 
 @Document(collection = "queues")
 public class Queue {
-    @Id
-    private ObjectId id;
+  @Id
+  private ObjectId id;
 
-    @Indexed(unique = true)
-    @NotEmpty
-    private String queueId;
+  @Indexed(unique = true)
+  @NotEmpty
+  private String queueId;
 
-    private Date created = new Date();
+  private Date created = new Date();
 
-    public ObjectId getId() {
-        return id;
-    }
+  public ObjectId getId() {
+    return id;
+  }
 
-    public void setId(ObjectId id) {
-        this.id = id;
-    }
+  public void setId(ObjectId id) {
+    this.id = id;
+  }
 
-    public String getQueueId() {
-        return queueId;
-    }
+  public String getQueueId() {
+    return queueId;
+  }
 
-    public void setQueueId(String queueId) {
-        this.queueId = queueId;
-    }
+  public void setQueueId(String queueId) {
+    this.queueId = queueId;
+  }
 
-    public Date getCreated() {
-        return created;
-    }
+  public Date getCreated() {
+    return created;
+  }
 
-    public void setCreated(Date created) {
-        this.created = created;
-    }
+  public void setCreated(Date created) {
+    this.created = created;
+  }
 }

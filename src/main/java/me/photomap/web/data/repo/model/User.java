@@ -14,67 +14,67 @@ import java.util.Map;
 @Document(collection = "users")
 public class User {
 
-    @Id
-    private ObjectId id;
+  @Id
+  private ObjectId id;
 
-    @Indexed(unique = true)
-    @NotEmpty
-    private String userName;
+  @Indexed(unique = true)
+  @NotEmpty
+  private String userName;
 
-    @NotEmpty
-    @Indexed(unique = true)
-    private String email;
+  @NotEmpty
+  @Indexed(unique = true)
+  private String email;
 
-    @NotEmpty
-    private String password;
+  @NotEmpty
+  private String password;
 
-    private boolean active = true;
+  private boolean active = true;
 
-    public boolean isActive() {
-        return active;
-    }
+  public boolean isActive() {
+    return active;
+  }
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
+  public void setActive(boolean active) {
+    this.active = active;
+  }
 
-    public ObjectId getId() {
-        return id;
-    }
+  public ObjectId getId() {
+    return id;
+  }
 
-    public void setId(ObjectId id) {
-        this.id = id;
-    }
+  public void setId(ObjectId id) {
+    this.id = id;
+  }
 
-    public String getUserName() {
-        return userName;
-    }
+  public String getUserName() {
+    return userName;
+  }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
 
-    public String getPassword() {
-        return password;
-    }
+  public String getPassword() {
+    return password;
+  }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    @JsonIgnore
-    public Map<String,String> toMap(){
-        Map<String,String> userMap = new HashMap<String,String>();
-        userMap.put("userName",this.getUserName());
-        userMap.put("id",this.getId().toString());
-        return userMap;
-    }
+  @JsonIgnore
+  public Map<String, String> toMap() {
+    Map<String, String> userMap = new HashMap<String, String>();
+    userMap.put("userName", this.getUserName());
+    userMap.put("id", this.getId().toString());
+    return userMap;
+  }
 }

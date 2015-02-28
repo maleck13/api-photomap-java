@@ -1,6 +1,6 @@
 package me.photomap.web.service;
 
-import me.photomap.web.config.AppConfig;
+import me.photomap.web.config.WebConfig;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.ContextHierarchy;
@@ -14,7 +14,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextHierarchy({
-        @ContextConfiguration(name="dispatcher",  classes = AppConfig.class,loader = AnnotationConfigWebContextLoader.class)
+        @ContextConfiguration(name="dispatcher",  classes = WebConfig.class,loader = AnnotationConfigWebContextLoader.class)
 })
 public abstract class IntegrateBase {
     public static final String FILE_PATH = "file.disk.location";

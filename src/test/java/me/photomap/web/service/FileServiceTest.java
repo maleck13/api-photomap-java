@@ -27,7 +27,7 @@ public class FileServiceTest extends IntegrateBase {
     @Before
     public void setUp()throws Exception{
         MockitoAnnotations.initMocks(this);
-        Mockito.when(amqpService.publishPicUploadedMessage(Mockito.anyString(),Mockito.anyString(),Mockito.anyString()))
+        Mockito.when(amqpService.publishPicUploadedMessage(Mockito.anyString(),Mockito.anyString(),Mockito.anyString(), Mockito.anyString()))
                 .thenReturn("testkey");
         filePath = env.getProperty(FILE_PATH);
         File f = new File(filePath + "/testuser");

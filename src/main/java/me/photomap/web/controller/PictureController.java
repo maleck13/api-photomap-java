@@ -38,65 +38,72 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
  * @author craigbrookes
  */
 @Controller
 public class PictureController {
-    
-    @Autowired PicturesRepo picRepo;
-    @Autowired AmqpService amqpService;
-    @Autowired private FileService fileService;
-    @Autowired private AmazonS3Client s3Client;
+
+  @Autowired
+  PicturesRepo picRepo;
+  @Autowired
+  AmqpService amqpService;
+  @Autowired
+  private FileService fileService;
+  @Autowired
+  private AmazonS3Client s3Client;
 
 
-    Logger log = LoggerFactory.getLogger(PictureController.class);
+  Logger log = LoggerFactory.getLogger(PictureController.class);
 
 
-    @RequestMapping(value = "/pictures/range",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody public List<Integer> range(UserAwareHttpRequest req){
-        User u = req.getUser();
-        return picRepo.yearRange(u.getUserName());
-    }
-    
-
-    @RequestMapping(value = "/pictures",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody public List<Picture> list(UserAwareHttpRequest req){
-        User u = req.getUser();
-        return picRepo.findAllByUser(u.getUserName());
-    }
-    
-
-    @RequestMapping("/pictures/{from}/{to}")
-    @ResponseBody public List<Picture> listFromTo(@PathVariable("from") int  from , @PathVariable("to") int to ,UserAwareHttpRequest req){
-        User u = req.getUser();
-        return picRepo.finAllInDateRange(from, to, u.getUserName());
-    }
+  @RequestMapping(value = "/pictures/range", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  @ResponseBody
+  public List<Integer> range(UserAwareHttpRequest req) {
+    User u = req.getUser();
+    return picRepo.yearRange(u.getUserName());
+  }
 
 
-    @ResponseStatus(HttpStatus.OK)
-    @RequestMapping("pictures/upload")
-    @ResponseBody public Map<String,String> upload(MultipartFile file, MultipartHttpServletRequest req)throws FileException{
+  @RequestMapping(value = "/pictures", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  @ResponseBody
+  public List<Picture> list(UserAwareHttpRequest req) {
+    User u = req.getUser();
+    return picRepo.findAllByUser(u.getUserName());
+  }
 
-        User u = (User) req.getAttribute(UserAwareHttpRequest.USER_ATTRIBUTE);
 
-        String jobKey = fileService.saveMultipartFileToDisk(file,u.getUserName());
-        Map<String,String> res = new HashMap<>();
-        res.put("key",jobKey);
-        return res;
+  @RequestMapping("/pictures/{from}/{to}")
+  @ResponseBody
+  public List<Picture> listFromTo(@PathVariable("from") int from, @PathVariable("to") int to, UserAwareHttpRequest req) {
+    User u = req.getUser();
+    return picRepo.finAllInDateRange(from, to, u.getUserName());
+  }
 
-    }
 
-    @RequestMapping(value = "/picture",method = RequestMethod.GET)
-    public ResponseEntity serveImg(UserAwareHttpRequest request, HttpServletResponse res, @RequestParam("file")String file)throws Exception{
-        User u = request.getUser();
-        FileService.FileResource resp = fileService.loadFile(file,u);
-        HttpHeaders headers = new HttpHeaders();
-        InputStreamResource inres = new InputStreamResource(resp.getContentStream());
-        headers.setContentLength(resp.getContentLengh());
-        headers.setContentType(MediaType.IMAGE_JPEG);
-        return new ResponseEntity(inres, headers, HttpStatus.OK);
+  @ResponseStatus(HttpStatus.OK)
+  @RequestMapping("pictures/upload")
+  @ResponseBody
+  public Map<String, String> upload(MultipartFile file, MultipartHttpServletRequest req) throws FileException {
 
-    }
-    
+    User u = (User) req.getAttribute(UserAwareHttpRequest.USER_ATTRIBUTE);
+
+    String jobKey = fileService.saveMultipartFileToDisk(file, u.getUserName());
+    Map<String, String> res = new HashMap<>();
+    res.put("key", jobKey);
+    return res;
+
+  }
+
+  @RequestMapping(value = "/picture", method = RequestMethod.GET)
+  public ResponseEntity serveImg(UserAwareHttpRequest request, HttpServletResponse res, @RequestParam("file") String file) throws Exception {
+    User u = request.getUser();
+    FileService.FileResource resp = fileService.loadFile(file, u);
+    HttpHeaders headers = new HttpHeaders();
+    InputStreamResource inres = new InputStreamResource(resp.getContentStream());
+    headers.setContentLength(resp.getContentLengh());
+    headers.setContentType(MediaType.IMAGE_JPEG);
+    return new ResponseEntity(inres, headers, HttpStatus.OK);
+
+  }
+
 }

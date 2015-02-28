@@ -9,8 +9,9 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public interface QueueRepo extends MongoRepository<Queue,String> {
+public interface QueueRepo extends MongoRepository<Queue, String> {
 
-    public List<Queue> findByCreatedLessThan(Date date);
-    public List<Queue> deleteQueueByCreatedLessThan(Date date);
+  public List<Queue> findByCreatedLessThan(Date date);
+
+  public List<Queue> deleteQueueByCreatedLessThan(Date date);
 }

@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 public class LoginFailedException extends AuthenticationFailure {
-    public LoginFailedException(String message) {
-        super(message);
-    }
+  public LoginFailedException(String message) {
+    super(message);
+  }
 }

@@ -10,17 +10,16 @@ import javax.servlet.http.HttpServletRequestWrapper;
  */
 public class UserAwareHttpRequest extends HttpServletRequestWrapper {
 
-    public static final String USER_ATTRIBUTE = "user";
+  public static final String USER_ATTRIBUTE = "user";
 
-    public UserAwareHttpRequest(HttpServletRequest request) {
-        super(request);
-    }
+  public UserAwareHttpRequest(HttpServletRequest request) {
+    super(request);
+  }
 
 
-
-    public User getUser(){
-       return (User) this.getAttribute(USER_ATTRIBUTE);
-    }
+  public User getUser() {
+    return (User) this.getAttribute(USER_ATTRIBUTE);
+  }
 
 
 }

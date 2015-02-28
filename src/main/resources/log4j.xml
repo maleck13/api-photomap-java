@@ -25,6 +25,13 @@
             <param name="ConversionPattern" value="%-5p: %c - %m%n" />
         </layout>
     </appender>
+    <appender name="picJobs" class="org.apache.log4j.FileAppender">
+        <param name="file" value="/var/log/photomap-api/picjobs.log"/>
+        <param name="MaxFileSize" value="200KB"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p: %c - %m%n" />
+        </layout>
+    </appender>
 
     <!-- Application Loggers -->
     <logger name="me.photomap.web">
@@ -32,38 +39,31 @@
         <appender-ref ref="mainLog" />
     </logger>
 
-    <logger name="me.photomap.web.task">
-        <level value="info" />
-        <appender-ref ref="taskLog" />
-    </logger>
-
-    <logger name="org.springframework.web.servlet.mvc"  >
-        <level value="TRACE"></level>
-        <appender-ref ref="console"></appender-ref>
-        <appender-ref ref="mainLog"></appender-ref>
-    </logger>
-
-    <!-- 3rdparty Loggers -->
     <logger name="org.springframework.core">
         <level value="info" />
     </logger>
-
     <logger name="org.springframework.beans">
         <level value="info" />
     </logger>
-
     <logger name="org.springframework.context">
         <level value="info" />
     </logger>
-
     <logger name="org.springframework.web">
         <level value="info" />
-        <appender-ref ref="console"></appender-ref>
-        <appender-ref ref="mainLog"></appender-ref>
+    </logger>
+    <logger name="org.springframework.web.socket">
+        <level value="debug" />
     </logger>
     <logger name="org.springframework.data.document.mongodb">
         <level value="DEBUG" />
     </logger>
+    <logger name="org.springframework.jnd">
+        <level value="INFO" />
+    </logger>
+    <logger name="me.photomap.web.amqp.JobMessageConsumer">
+        <level value="INFO" />
+    </logger>
+
 
     <!-- Root Logger -->
     <root>

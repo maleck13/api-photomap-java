@@ -18,26 +18,25 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class AccessInterceptor extends HandlerInterceptorAdapter {
 
-    Logger log = LoggerFactory.getLogger(AccessInterceptor.class);
+  Logger log = LoggerFactory.getLogger(AccessInterceptor.class);
 
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        User u = (User) request.getAttribute(UserAwareHttpRequest.USER_ATTRIBUTE);
+  @Override
+  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    User u = (User) request.getAttribute(UserAwareHttpRequest.USER_ATTRIBUTE);
 
 
-        if (handler instanceof HandlerMethod) {
-            log.debug("checking access on handler " + ((HandlerMethod) handler).getBean() + " " + ((HandlerMethod) handler).getMethod());
-            HandlerMethod methodHandler = (HandlerMethod) handler;
-            OpenAccess access = methodHandler.getMethodAnnotation(OpenAccess.class);
-            if(null != access){
-                log.debug("access is open on handler  " + ((HandlerMethod) handler).getBean() + " " + ((HandlerMethod) handler).getMethod());
-                return true;
-            }
-            else if(null == u){
-                log.debug("no user present throwing on handler " + ((HandlerMethod) handler).getBean() + " " + ((HandlerMethod) handler).getMethod());
-                throw new NoAccessException();
-            }
-        }
+    if (handler instanceof HandlerMethod) {
+      log.debug("checking access on handler " + ((HandlerMethod) handler).getBean() + " " + ((HandlerMethod) handler).getMethod());
+      HandlerMethod methodHandler = (HandlerMethod) handler;
+      OpenAccess access = methodHandler.getMethodAnnotation(OpenAccess.class);
+      if (null != access) {
+        log.debug("access is open on handler  " + ((HandlerMethod) handler).getBean() + " " + ((HandlerMethod) handler).getMethod());
         return true;
+      } else if (null == u) {
+        log.debug("no user present throwing on handler " + ((HandlerMethod) handler).getBean() + " " + ((HandlerMethod) handler).getMethod());
+        throw new NoAccessException();
+      }
     }
+    return true;
+  }
 }

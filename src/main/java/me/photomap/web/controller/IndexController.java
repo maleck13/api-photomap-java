@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class IndexController {
-    
-    
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    @ResponseBody
-    @OpenAccess
-    public Map<String,String> showIndex() {
-         Map<String,String> res= new HashMap<String, String>();
-        res.put("message", "Hello world");
-        return res;
-    }
+
+
+  @RequestMapping(value = "/", method = RequestMethod.GET)
+  @ResponseBody
+  @OpenAccess
+  public Map<String, String> showIndex() {
+    Map<String, String> res = new HashMap<String, String>();
+    res.put("message", "Hello world");
+    return res;
+  }
 }

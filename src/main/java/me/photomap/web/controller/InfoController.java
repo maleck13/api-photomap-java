@@ -15,14 +15,16 @@ import java.util.Map;
 public class InfoController {
 
 
-    @Autowired private Environment env;
+  @Autowired
+  private Environment env;
 
-    @RequestMapping(value = "/info/version",method = RequestMethod.GET)
-    @OpenAccess
-    @ResponseBody public Map<String,String> version(){
-        HashMap map = new HashMap();
-        map.put("version",env.getProperty("app.version"));
-        return map;
-    }
+  @RequestMapping(value = "/info/version", method = RequestMethod.GET)
+  @OpenAccess
+  @ResponseBody
+  public Map<String, String> version() {
+    HashMap map = new HashMap();
+    map.put("version", env.getProperty("app.version"));
+    return map;
+  }
 
 }

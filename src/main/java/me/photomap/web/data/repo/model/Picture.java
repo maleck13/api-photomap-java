@@ -6,112 +6,109 @@
 package me.photomap.web.data.repo.model;
 
 import java.util.Date;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- *
  * @author craigbrookes
  */
 @Document(collection = "pictures")
 public class Picture {
-    
-    @Id
-    private ObjectId id;
-    
-    private double[] lonlat;
-    
-    private String name;
-    
-    
-    private String path;
-    
-    private String thumb;
-    
-    private Date time;
-    
-    private long timestamp;
-    
-    private String user;
-    
-    private String year;
 
-    public ObjectId getId() {
-        return id;
-    }
+  @Id
+  private ObjectId id;
 
-    public void setId(ObjectId id) {
-        this.id = id;
-    }
+  private double[] lonlat;
 
-    public double[] getLonlat() {
-        return lonlat;
-    }
+  private String name;
 
-    public void setLonlat(double[] lonlat) {
-        this.lonlat = lonlat;
-    }
 
-    public String getName() {
-        return name;
-    }
+  private String path;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  private String thumb;
 
-    public String getPath() {
-        return path;
-    }
+  private Date time;
 
-    public void setPath(String path) {
-        this.path = path;
-    }
+  private long timestamp;
 
-    public String getThumb() {
-        return thumb;
-    }
+  private String user;
 
-    public void setThumb(String thumb) {
-        this.thumb = thumb;
-    }
+  private String year;
 
-    public Date getTime() {
-        return time;
-    }
+  public ObjectId getId() {
+    return id;
+  }
 
-    public void setTime(Date time) {
-        this.time = time;
-    }
+  public void setId(ObjectId id) {
+    this.id = id;
+  }
 
-    public long getTimestamp() {
-        return timestamp;
-    }
+  public double[] getLonlat() {
+    return lonlat;
+  }
 
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
-    }
+  public void setLonlat(double[] lonlat) {
+    this.lonlat = lonlat;
+  }
 
-    public String getUser() {
-        return user;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setUser(String user) {
-        this.user = user;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getYear() {
-        return year;
-    }
+  public String getPath() {
+    return path;
+  }
 
-    public void setYear(String year) {
-        this.year = year;
-    }
-    
-    
-    
-    
-    
+  public void setPath(String path) {
+    this.path = path;
+  }
+
+  public String getThumb() {
+    return thumb;
+  }
+
+  public void setThumb(String thumb) {
+    this.thumb = thumb;
+  }
+
+  public Date getTime() {
+    return time;
+  }
+
+  public void setTime(Date time) {
+    this.time = time;
+  }
+
+  public long getTimestamp() {
+    return timestamp;
+  }
+
+  public void setTimestamp(long timestamp) {
+    this.timestamp = timestamp;
+  }
+
+  public String getUser() {
+    return user;
+  }
+
+  public void setUser(String user) {
+    this.user = user;
+  }
+
+  public String getYear() {
+    return year;
+  }
+
+  public void setYear(String year) {
+    this.year = year;
+  }
+
+
 }
