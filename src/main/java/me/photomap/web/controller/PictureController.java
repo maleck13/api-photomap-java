@@ -20,6 +20,7 @@ import me.photomap.web.data.repo.model.User;
 import me.photomap.web.http.filters.UserAwareHttpRequest;
 import me.photomap.web.service.AmqpService;
 import me.photomap.web.service.FileService;
+import me.photomap.web.service.PictureService;
 import me.photomap.web.service.exceptions.FileException;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
@@ -51,6 +52,8 @@ public class PictureController {
   private FileService fileService;
   @Autowired
   private AmazonS3Client s3Client;
+  @Autowired
+  private PictureService pictureService;
 
 
   Logger log = LoggerFactory.getLogger(PictureController.class);
@@ -76,7 +79,7 @@ public class PictureController {
   @ResponseBody
   public List<Picture> listFromTo(@PathVariable("from") int from, @PathVariable("to") int to, UserAwareHttpRequest req) {
     User u = req.getUser();
-    return picRepo.finAllInDateRange(from, to, u.getUserName());
+    return pictureService.findPicturesFromAndTo(from,to,u.getUserName());
   }
 
 

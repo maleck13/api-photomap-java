@@ -40,7 +40,8 @@ public class PicturesRepo {
     return mongoTemp.find(query, Picture.class);
   }
 
-  public List<Picture> finAllInDateRange(int from, int to, String user) {
+  public List<Picture> finAllInDateRange(long from, long to, String user) {
+
     Query q = new Query(Criteria.where("timestamp").gte(from).andOperator(Criteria.where("timestamp").lt(to),Criteria.where("user").is(user)));
     return mongoTemp.find(q, Picture.class);
   }
