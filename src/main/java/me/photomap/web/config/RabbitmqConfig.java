@@ -20,6 +20,7 @@ public class RabbitmqConfig {
     String host = env.getProperty("rabbitmq.host");
     String user = env.getProperty("rabbitmq.pics.user");
     String pass = env.getProperty("rabbitmq.pics.pass");
+    System.out.print("SETTING UP RABBITMQ " + host + " " + pass);
     cf.setHost(host);
     cf.setUsername(user);
     cf.setPassword(pass);

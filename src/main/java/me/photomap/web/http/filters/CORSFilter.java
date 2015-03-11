@@ -3,6 +3,8 @@ package me.photomap.web.http.filters;
 import me.photomap.web.http.interceptors.UserResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -23,11 +25,15 @@ public class CORSFilter implements Filter {
   }
 
   public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
+    String env = System.getenv("environment.name");
+    System.out.println("cors filter setup " + env);
+    String accessControl = "dev".equals(env) ? "*" : "http://photomap.me";
 
-    logger.info("cors filter doFilter");
     HttpServletResponse response = (HttpServletResponse) res;
     UserAwareHttpRequest request = new UserAwareHttpRequest((HttpServletRequest) req);
-    response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Access-Control-Allow-Origin", accessControl);
+    //response.setHeader("Access-Control-Allow-Origin", "http://photomap.local");
+    response.setHeader("Access-Control-Allow-Credentials","true");
     response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
     response.setHeader("Access-Control-Max-Age", "3600");
     response.setHeader("Access-Control-Allow-Headers", "x-requested-with, Content-Type, " + UserResolver.USER_ID_HEADER + ", " + UserResolver.USER_SESSION_ID_HEADER + "");

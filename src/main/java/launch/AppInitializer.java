@@ -27,6 +27,7 @@ public class AppInitializer implements WebApplicationInitializer {
     dynamic.setLoadOnStartup(1);
 
 
+
     FilterRegistration corsFilter = servletContext.addFilter("corsFilter", CORSFilter.class);
     corsFilter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST, DispatcherType.FORWARD), false, "/*");
     logger.debug("registered cors filter");

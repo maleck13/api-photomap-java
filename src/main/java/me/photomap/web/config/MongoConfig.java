@@ -5,9 +5,7 @@
  */
 package me.photomap.web.config;
 
-import com.mongodb.Mongo;
-import com.mongodb.MongoClient;
-import com.mongodb.WriteConcern;
+import com.mongodb.*;
 
 import javax.annotation.PostConstruct;
 
@@ -25,6 +23,8 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.core.MongoFactoryBean;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
+import java.util.Arrays;
 
 /**
  * @author craigbrookes
@@ -51,7 +51,10 @@ public class MongoConfig extends AbstractMongoConfiguration {
 
     int port = env.getProperty("mongodb.dbport", Integer.class);
     String host = env.getProperty("mongodb.dbhostname");
-    Mongo m = new MongoClient(host, port);
+    String user = env.getProperty("mongodb.dbusername");
+    String pass = env.getProperty("mongodb.dbpassword");
+    MongoCredential credential = MongoCredential.createMongoCRCredential(user, "admin", pass.toCharArray());
+    MongoClient m = new MongoClient(new ServerAddress(host), Arrays.asList(credential));
     return m;
   }
 
@@ -72,16 +75,12 @@ public class MongoConfig extends AbstractMongoConfiguration {
   @Bean
   @Override
   public MongoTemplate mongoTemplate() throws Exception {
-    Boolean authRequired = env.getProperty("mongodb.requireauth", Boolean.class);
+
 
     MongoTemplate m;
-    if (authRequired) {
-      log.info("setting up remote db connection");
-      m = new MongoTemplate(mongo(), getDatabaseName(), getUserCredentials());
-    } else {
-      log.info("setting up local db connection");
+
       m = new MongoTemplate(mongo(), getDatabaseName());
-    }
+
     return m;
 
   }
